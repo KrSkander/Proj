@@ -1,5 +1,6 @@
 package com.example.movietracker;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.animation.ObjectAnimator;
@@ -24,8 +25,10 @@ public class LoadingScreen extends AppCompatActivity
         super.onCreate(savedInstanceState);
 
         //remove title
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        //this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
         setContentView(R.layout.activity_loading_screen);
 
         new Handler().postDelayed(new Runnable()
